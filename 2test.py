@@ -1,12 +1,21 @@
 import glob
 import time
+import os.path
 
 s3Path = ('S3', '/sys/bus/w1/devices/28-3c01b55660d2/w1_slave')
 s4Path = ('S4', '/sys/bus/w1/devices/28-3c01b55668ca/w1_slave')
 s5Path = ('S5', '/sys/bus/w1/devices/28-3c01b556f942/w1_slave')
 
-pathes = [s3Path, s4Path, s5Path]
+pathes = []
 
+if os.path.isfile(s3Path[1]):
+  pathes.append(s3Path)
+
+if os.path.isfile(s4Path[1]):
+  pathes.append(s4Path)
+
+if os.path.isfile(s5Path[1]):
+  pathes.append(s5Path)
 
 lastOpennedFile = ""
 path = "home/pi/git/TFMPatri/output2.txt"
