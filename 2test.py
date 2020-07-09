@@ -7,6 +7,21 @@ s5Path = ('S5', '/sys/bus/w1/devices/28-3c01b556f942/w1_slave')
 
 pathes = [s3Path, s4Path, s5Path]
 
+
+lastOpennedFile = ""
+path = "home/pi/git/TFMPatri/output2.txt"
+
+if os.path.isfile(path):
+  lastOpennedFile = open(path, "a")
+else:
+  lastOpennedFile = open(path, "w+")
+  lastOpennedFile.close()
+  lastOpennedFile = open(path, "a")
+
+def append2File(s): 
+    lastOpennedFile.write(s+"\n")
+    lastOpennedFile.flush()
+       
 def now():
     return time.strftime('[%d-%m-%Y %H:%M:%S]')
 
@@ -30,8 +45,9 @@ def read_temp():
             temp_c = float(temp_string) / 1000.0
         res += "[{}] {}, ".format(path[0], temp_c)
     return now() + " " + res
+
 while True:
-    print(read_temp())
+    append2File(read_temp())
     time.sleep(10)
 
 
