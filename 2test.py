@@ -18,7 +18,7 @@ if os.path.isfile(s5Path[1]):
   pathes.append(s5Path)
 
 lastOpennedFile = ""
-path = "home/pi/git/TFMPatri/output2.txt"
+path = "/home/pi/git/TFMPatri/output2.txt"
 
 if os.path.isfile(path):
   lastOpennedFile = open(path, "a")
