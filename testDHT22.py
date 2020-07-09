@@ -6,7 +6,7 @@ import os.path
 
 
 lastOpennedFile = ""
-path = "home/pi/git/TFMPatri/output.txt"
+path = "/home/pi/git/TFMPatri/output.txt"
 
 if os.path.isfile(path):
   lastOpennedFile = open("home/pi/git/TFMPatri/output.txt", "a")
