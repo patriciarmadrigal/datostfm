@@ -9,7 +9,7 @@ lastOpennedFile = ""
 path = "/home/pi/git/TFMPatri/output.txt"
 
 if os.path.isfile(path):
-  lastOpennedFile = open("home/pi/git/TFMPatri/output.txt", "a")
+  lastOpennedFile = open("/home/pi/git/TFMPatri/output.txt", "a")
 else:
   lastOpennedFile = open("/home/pi/git/TFMPatri/output.txt", "w+")
   lastOpennedFile.close()
