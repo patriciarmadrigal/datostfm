@@ -2,9 +2,18 @@
 import Adafruit_DHT as dht
 import time
 from time import sleep
+import os.path
 
 
-lastOpennedFile = open("/home/pi/git/TFMPatri/output.txt", "a")
+lastOpennedFile = ""
+path = "home/pi/git/TFMPatri/output.txt"
+
+if os.path.isfile(path):
+  lastOpennedFile = open("home/pi/git/TFMPatri/output.txt", "a")
+else:
+  lastOpennedFile = open("/home/pi/git/TFMPatri/output.txt", "w+")
+  lastOpennedFile.close()
+  lastOpennedFile = open("/home/pi/git/TFMPatri/output.txt", "a")
 
 def now():
     return time.strftime('[%d-%m-%Y %H:%M:%S]')
