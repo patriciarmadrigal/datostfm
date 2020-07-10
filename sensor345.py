@@ -7,18 +7,21 @@ s4Path = ('S4', '/sys/bus/w1/devices/28-3c01b55668ca/w1_slave')
 s5Path = ('S5', '/sys/bus/w1/devices/28-3c01b556f942/w1_slave')
 
 pathes = []
+def fillPathes():
+    del pathes[:]
+    if os.path.isfile(s3Path[1]):
+     pathes.append(s3Path)
 
-if os.path.isfile(s3Path[1]):
-  pathes.append(s3Path)
+    if os.path.isfile(s4Path[1]):
+     pathes.append(s4Path)
 
-if os.path.isfile(s4Path[1]):
-  pathes.append(s4Path)
+    if os.path.isfile(s5Path[1]):
+     pathes.append(s5Path)
 
-if os.path.isfile(s5Path[1]):
-  pathes.append(s5Path)
+fillPathes()
 
 lastOpennedFile = ""
-path = "/home/pi/git/TFMPatri/output2.txt"
+path = "/home/pi/git/TFMPatri/o345.txt"
 
 if os.path.isfile(path):
   lastOpennedFile = open(path, "a")
@@ -57,6 +60,7 @@ def read_temp():
 
 while True:
     append2File(read_temp())
+    fillPathes()
     time.sleep(10)
 
 
