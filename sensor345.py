@@ -35,7 +35,7 @@ def append2File(s):
     lastOpennedFile.flush()
        
 def now():
-    return time.strftime('[%d-%m-%Y %H:%M:%S]')
+    return time.strftime('[%d-%m %H:%M:%S]')
 
 def read_temp_raw(p):
     f = open(p, 'r')
