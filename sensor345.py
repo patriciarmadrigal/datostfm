@@ -3,7 +3,7 @@ import time
 import os.path
 
 s3Path = ('S3', '/sys/bus/w1/devices/28-3c01b55660d2/w1_slave')
-s4Path = ('S4', '/sys/bus/w1/devices/28-3c01b55668ca/w1_slave')
+s4Path = ('S4', '/sys/bus/w1/devices/28-00000c213593/w1_slave')
 s5Path = ('S5', '/sys/bus/w1/devices/28-3c01b556f942/w1_slave')
 
 pathes = []
@@ -21,7 +21,7 @@ def fillPathes():
 fillPathes()
 
 lastOpennedFile = ""
-path = "/home/pi/git/TFMPatri/o345.txt"
+path = "/home/pi/git/datostfm/o345.txt"
 
 if os.path.isfile(path):
   lastOpennedFile = open(path, "a")
