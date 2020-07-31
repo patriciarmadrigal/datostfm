@@ -61,6 +61,6 @@ def read_temp():
 while True:
     append2File(read_temp())
     fillPathes()
-    time.sleep(10)
+    time.sleep(300)
 
 

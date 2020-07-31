@@ -30,4 +30,4 @@ while True:
         print("Error in sensor 1")
     
     append2File("{0} [S2] {1:0.01f}, {2:0.01f}".format(now(), t, h))
-    sleep(10)
+    sleep(300)
