@@ -15,7 +15,7 @@ else:
   lastOpennedFile = open(path, "a")
 
 def now():
-    return time.strftime('[%d-%m %H:%M:%S]')
+    return time.strftime('%d-%m;%H:%M:%S')
 
 def append2File(s): 
         lastOpennedFile.write(s+"\n")
@@ -29,5 +29,5 @@ while True:
     except:
         print("Error in sensor 1")
     
-    append2File("{0} [S2] {1:0.01f}, {2:0.01f}".format(now(), t, h))
+    append2File("{0};S2;{1:0.01f};{2:0.01f}".format(now(), t, h).replace('.', ','))
     sleep(300)
