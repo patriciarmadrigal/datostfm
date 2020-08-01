@@ -35,7 +35,7 @@ def append2File(s):
     lastOpennedFile.flush()
        
 def now():
-    return time.strftime('[%d-%m %H:%M:%S]')
+    return time.strftime('%d-%m;%H:%M:%S')
 
 def read_temp_raw(p):
     f = open(p, 'r')
@@ -55,7 +55,7 @@ def read_temp():
         if equals_pos != -1:
             temp_string = lines[1][equals_pos+2:]
             temp_c = float(temp_string) / 1000.0
-        res += "[{}] {}, ".format(path[0], temp_c)
+        res += ";{};{}".format(path[0], temp_c)
     return now() + " " + res
 
 while True:
