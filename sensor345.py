@@ -56,7 +56,7 @@ def read_temp():
             temp_string = lines[1][equals_pos+2:]
             temp_c = float(temp_string) / 1000.0
         res += ";{};{}".format(path[0], temp_c).replace('.', ',')
-    return now() + " " + res
+    return now() +  res
 
 while True:
     append2File(read_temp())

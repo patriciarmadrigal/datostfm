@@ -15,7 +15,7 @@ else:
   lastOpennedFile = open(path, "a")
 
 def now():
-    return time.strftime('%d-%m;%H:%M:%S]')
+    return time.strftime('%d-%m;%H:%M:%S')
 
 def append2File(s): 
         lastOpennedFile.write(s+"\n")
